@@ -9,4 +9,4 @@ wget -q -O - https://raw.githubusercontent.com/hoobs-org/hoobs-deconz-phoscon/ma
 This will setup DeConz and Phoscon for you.
 
 
-#WORK IN PROGESS - DO NOT USE ATM
+# WORK IN PROGESS - DO NOT USE ATM
