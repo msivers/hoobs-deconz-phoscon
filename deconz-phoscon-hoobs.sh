@@ -43,7 +43,7 @@ echo "Wiring Pi (for Rpi4B) installed"
 echo "----------------------------------------------------------------"
 echo "Updating DeConz"
 wget https://www.dresden-elektronik.de/rpi/deconz/deconz-latest.deb
-sudo dpkg -i deconz-latest.deb
+sudo dpkg -i deconz-2.05.39-qt5.deb
 echo "DeConz updated"
 echo "----------------------------------------------------------------"
 echo "Disable nginx for HOOBS...."
