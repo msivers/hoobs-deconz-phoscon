@@ -39,7 +39,9 @@ sudo dpkg -i deconz-latest.deb
 echo "DeConz updated"
 echo "----------------------------------------------------------------"
 echo "Disable GUI for DeConz...."
+sudo systemctl stop deconz-gui.service
 sudo systemctl disable deconz-gui.service
+sudo systemctl stop nginx
 sudo systemctl disable nginx.service
 echo "GUI for DeConz disabled"
 echo "----------------------------------------------------------------"
