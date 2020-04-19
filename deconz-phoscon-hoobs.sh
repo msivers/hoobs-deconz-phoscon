@@ -44,8 +44,8 @@ sudo systemctl stop deconz-gui.service
 sudo systemctl disable deconz-gui.service
 sudo systemctl stop nginx
 sudo systemctl disable nginx.service
-sudo systemctl enable deconz.service
-sudo systemctl start deconz.service
+sudo systemctl enable deconz-gui.service
+sudo systemctl start deconz-gui.service
 
 echo "GUI for DeConz disabled, Phoson sarted"
 echo "----------------------------------------------------------------"
