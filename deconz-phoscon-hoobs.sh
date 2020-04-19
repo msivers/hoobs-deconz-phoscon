@@ -29,7 +29,7 @@ wget -O - http://phoscon.de/apt/deconz.pub.key | \
 sudo apt-key add -
 echo "Installing....."
 sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
-            $(lsb_release -cs) main' > \
+            $(lsb_release -cs)-beta main' > \
             /etc/apt/sources.list.d/deconz.list"
 sudo apt update
 sudo apt install deconz
