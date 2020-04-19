@@ -49,7 +49,7 @@ echo "----------------------------------------------------------------"
 echo "Disable nginx for HOOBS...."
 sudo systemctl stop nginx
 sudo systemctl disable nginx.service
-echo "GUI for DeConz disabled, Phoson sarted"
+echo "Nginx for HOOBS disabled"
 echo "----------------------------------------------------------------"
 echo "After the installation is completed the Device performs an"
 echo "reboot and you can access Phoscon and HOOBS as following:"
