@@ -13,7 +13,8 @@ echo "HOOBS   Interface is reachable at hoobs.local:8080"
 echo "----------------------------------------------------------------"
 wait 10
 echo "Enable Raspberry Serial Port.."
-sudo raspi-config nonint do_serial 1
+sudo raspi-config nonint do_serial 0
+sudo raspi- config nonint do_uart 0
 echo "Raspberry Serial Port enabled"
 echo "----------------------------------------------------------------"
 echo "Get Phoscon Public Key....."
