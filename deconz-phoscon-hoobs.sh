@@ -32,7 +32,7 @@ sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
             $(lsb_release -cs)-beta main' > \
             /etc/apt/sources.list.d/deconz.list"
 sudo apt update
-sudo apt install -f
+sudo apt install -f --yes
 #sudo apt install deconz
 echo "DeConz & Phoscon installed."
 echo "----------------------------------------------------------------"
