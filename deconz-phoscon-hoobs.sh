@@ -33,7 +33,8 @@ sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
             /etc/apt/sources.list.d/deconz.list"
 sudo apt update
 sudo apt install i2c-tools build-essential raspberrypi-kernel-headers
-curl -O -L -k https://github.com/dresden-elektronik/raspbee2-rtc/archive/master.zip --yes
+curl -O -L -k https://github.com/dresden-elektronik/raspbee2-rtc/archive/master.zip
+yA
 unzip master.zip
 cd raspbee2-rtc-master
 make
