@@ -12,7 +12,6 @@ echo "Phoscon Interface is reachable at hoobs.local"
 echo "HOOBS   Interface is reachable at hoobs.local:8080"
 echo "----------------------------------------------------------------"
 read -p "Would you like to instaLL now? " -n 1 -r
-echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 echo "Enable Raspberry Serial Port.."
