@@ -44,7 +44,10 @@ sudo systemctl stop deconz-gui.service
 sudo systemctl disable deconz-gui.service
 sudo systemctl stop nginx
 sudo systemctl disable nginx.service
-echo "GUI for DeConz disabled"
+sudo systemctl enable deconz.service
+sudo systemctl start deconz.service
+
+echo "GUI for DeConz disabled, Phoson sarted"
 echo "----------------------------------------------------------------"
 echo "After the installation is completed the Device performs an"
 echo "reboot and you can access Phoscon and HOOBS as following:"
