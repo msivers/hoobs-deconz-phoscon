@@ -38,7 +38,7 @@ unzip master.zip
 cd raspbee2-rtc-master
 make
 sudo make install
-sudo apt install deconz
+#sudo apt install deconz
 echo "DeConz & Phoscon installed."
 echo "----------------------------------------------------------------"
 echo "Installing Wiring Pi (for Rpi4B)....."
