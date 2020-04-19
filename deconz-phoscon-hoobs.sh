@@ -32,13 +32,6 @@ sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
             $(lsb_release -cs)-beta main' > \
             /etc/apt/sources.list.d/deconz.list"
 sudo apt update
-sudo apt install i2c-tools build-essential raspberrypi-kernel-headers
-curl -O -L -k https://github.com/dresden-elektronik/raspbee2-rtc/archive/master.zip
-yA
-unzip master.zip
-cd raspbee2-rtc-master
-make
-sudo make install
 sudo apt install -f
 #sudo apt install deconz
 echo "DeConz & Phoscon installed."
