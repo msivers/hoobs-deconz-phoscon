@@ -1,9 +1,14 @@
 #!/bin/bash
-
+echo " "
+echo " "
+echo " "
+echo " "
 echo "----------------------------------------------------------------"
 echo "This will install DeConz and Phoscon for HOOBS 3"
 echo "----------------------------------------------------------------"
-
+echo " "
+echo " "
+echo " "
 echo "----------------------------------------------------------------"
 echo "After the installation is completed the Device performs an"
 echo "reboot and you can access Phoscon and HOOBS as following:"
@@ -11,7 +16,9 @@ echo "----------------------------------------------------------------"
 echo "Phoscon Interface is reachable at hoobs.local"
 echo "HOOBS   Interface is reachable at hoobs.local:8080"
 echo "----------------------------------------------------------------"
-wait 10
+echo " "
+echo " "
+echo " "
 echo "Enable Raspberry Serial Port.."
 sudo raspi-config nonint do_serial 1
 sudo raspi-config nonint do_uart 0
@@ -39,14 +46,9 @@ wget https://www.dresden-elektronik.de/rpi/deconz/deconz-latest.deb
 sudo dpkg -i deconz-latest.deb
 echo "DeConz updated"
 echo "----------------------------------------------------------------"
-echo "Disable GUI for DeConz...."
-sudo systemctl stop deconz-gui.service
-sudo systemctl disable deconz-gui.service
+echo "Disable nginx for HOOBS...."
 sudo systemctl stop nginx
 sudo systemctl disable nginx.service
-sudo systemctl enable deconz-gui.service
-sudo systemctl start deconz-gui.service
-
 echo "GUI for DeConz disabled, Phoson sarted"
 echo "----------------------------------------------------------------"
 echo "After the installation is completed the Device performs an"
