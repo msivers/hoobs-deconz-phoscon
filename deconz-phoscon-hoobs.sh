@@ -38,6 +38,7 @@ unzip master.zip
 cd raspbee2-rtc-master
 make
 sudo make install
+sudo apt install -f
 #sudo apt install deconz
 echo "DeConz & Phoscon installed."
 echo "----------------------------------------------------------------"
