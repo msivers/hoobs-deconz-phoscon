@@ -11,9 +11,14 @@ echo "----------------------------------------------------------------"
 echo "Phoscon Interface is reachable at hoobs.local"
 echo "HOOBS   Interface is reachable at hoobs.local:8080"
 echo "----------------------------------------------------------------"
-read -p "Would you like to instaLL now? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
+while true; do
+    read -p "Do you wish to install?" yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 echo "Enable Raspberry Serial Port.."
 yes y | sudo raspi-config nonint do_serial 1
 echo "Raspberry Serial Port enabled"
@@ -49,5 +54,4 @@ echo "Rebooting now....."
 echo "----------------------------------------------------------------"
 wait 10
 sudo reboot
-fi
 
