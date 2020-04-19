@@ -43,7 +43,14 @@ sudo systemctl disable deconz-gui.service
 sudo systemctl disable nginx.service
 echo "GUI for DeConz disabled"
 echo "----------------------------------------------------------------"
-echo "Rebooting now....."
+echo "After the installation is completed the Device performs an"
+echo "reboot and you can access Phoscon and HOOBS as following:"
+echo "----------------------------------------------------------------"
+echo "Phoscon Interface is reachable at hoobs.local"
+echo "HOOBS   Interface is reachable at hoobs.local:8080"
+echo "----------------------------------------------------------------"
+echo "----------------------------------------------------------------"
+echo "Rebooting now in 10 Seconds.........."
 echo "----------------------------------------------------------------"
 wait 10
 sudo reboot
