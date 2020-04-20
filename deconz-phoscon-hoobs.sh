@@ -23,17 +23,16 @@ echo " "
 echo " "
 echo " "
 echo "----------------------------------------------------------------"
-echo "This will install DeConz and Phoscon for HOOBS 3"
+echo "This script will install deCONZ and Phoscon for HOOBS 3"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
 echo " "
 echo "----------------------------------------------------------------"
-echo "After the installation is completed the Device performs an"
-echo "reboot and you can access Phoscon and HOOBS as following:"
+echo "After the installation is completed the Device performs a"
+echo "reboot and you can access Phoscon as following:"
 echo "----------------------------------------------------------------"
-echo "Phoscon Interface is reachable at hoobs.local"
-echo "HOOBS   Interface is reachable at hoobs.local:8080"
+echo "Phoscon Interface is reachable at hoobs.local:1881"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
@@ -110,7 +109,7 @@ max_framebuffers=2
 #dtoverlay=vc4-fkms-v3d
 enable_uart=1
 EOL
-echo "Raspberry Serial Port enabled"
+echo "Raspberry Pi Serial Port enabled"
 echo "----------------------------------------------------------------"
 echo "Get Phoscon Public Key....."
 wget -O - http://phoscon.de/apt/deconz.pub.key | \
@@ -122,35 +121,31 @@ sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
 sudo apt update
 sudo apt install -f --yes
 sudo apt install deconz
-echo "DeConz & Phoscon installed."
+echo "deCONZ & Phoscon installed."
 echo "----------------------------------------------------------------"
-echo "Installing Wiring Pi (for Rpi4B)....."
+echo "Installing Wiring Pi ..."
 cd /tmp
 wget https://project-downloads.drogon.net/wiringpi-latest.deb
 sudo dpkg -i wiringpi-latest.deb
-echo "Wiring Pi (for Rpi4B) installed"
+echo "Wiring Pi installed"
 echo "----------------------------------------------------------------"
-echo "Updating DeConz"
+echo "Updating deCONZ"
 wget http://deconz.dresden-elektronik.de/raspbian/stable/deconz-latest.deb
 sudo dpkg -i deconz-latest.deb
-echo "DeConz updated"
+echo "deCONZ updated"
 echo "----------------------------------------------------------------"
-echo "Disable nginx for HOOBS...."
-sudo systemctl stop nginx
-sudo systemctl disable nginx.service
-echo "Nginx for HOOBS disabled"
+echo "Creating deCONZ service"
+rm -rf /lib/systemd/system/deconz.service
+wget -P /lib/systemd/system/deconz.service https://raw.githubusercontent.com/hoobs-org/hoobs-deconz-phoscon/master/deconz.service
+systemctl daemon-reload
+systemctl restart deconz
+echo "Service created. Reboot required"
 echo "----------------------------------------------------------------"
-echo "After the installation is completed the Device performs an"
-echo "reboot and you can access Phoscon and HOOBS as following:"
+echo "Waiting for device to reboot"
 echo "----------------------------------------------------------------"
-echo "Phoscon Interface is reachable at hoobs.local"
-echo "HOOBS   Interface is reachable at hoobs.local:8080"
+echo "Phoscon Interface will be reachable at hoobs.local:1881"
 echo "----------------------------------------------------------------"
+echo "Rebooting..."
 echo "----------------------------------------------------------------"
-echo "Rebooting now in 10 Seconds.........."
-echo "----------------------------------------------------------------"
-sudo reboot
-echo "----------------------------------------------------------------"
-echo "Enter now URL: hoobs.local to get to the Phoscon interface"
-echo "----------------------------------------------------------------"
+sudo reboot -r now
 
