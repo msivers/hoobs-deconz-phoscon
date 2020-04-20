@@ -138,14 +138,10 @@ echo "Creating deCONZ service"
 rm -rf /lib/systemd/system/deconz.service
 wget -P /lib/systemd/system/deconz.service https://raw.githubusercontent.com/hoobs-org/hoobs-deconz-phoscon/master/deconz.service
 systemctl daemon-reload
+echo "----------------------------------------------------------------"
+echo "Service created."
+echo "----------------------------------------------------------------"
+echo "Starting deCONZ Service"
 systemctl restart deconz
-echo "Service created. Reboot required"
 echo "----------------------------------------------------------------"
-echo "Waiting for device to reboot"
-echo "----------------------------------------------------------------"
-echo "Phoscon Interface will be reachable at hoobs.local:1881"
-echo "----------------------------------------------------------------"
-echo "Rebooting..."
-echo "----------------------------------------------------------------"
-sudo reboot -r now
-
+echo "Phoscon Interface is now reachable at hoobs.local:1881"
