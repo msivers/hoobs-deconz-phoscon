@@ -121,7 +121,7 @@ sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
             /etc/apt/sources.list.d/deconz.list"
 sudo apt update
 sudo apt install -f --yes
-#sudo apt install deconz
+sudo apt install deconz
 echo "DeConz & Phoscon installed."
 echo "----------------------------------------------------------------"
 echo "Installing Wiring Pi (for Rpi4B)....."
