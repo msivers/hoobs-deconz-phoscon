@@ -118,9 +118,9 @@ echo "Installing....."
 sudo sh -c "echo 'deb http://phoscon.de/apt/deconz \
             $(lsb_release -cs)-beta main' > \
             /etc/apt/sources.list.d/deconz.list"
-sudo apt update
+sudo apt update -f --yes
 sudo apt install -f --yes
-sudo apt install deconz
+sudo apt install deconz -f --yes
 echo "deCONZ & Phoscon installed."
 echo "----------------------------------------------------------------"
 echo "Installing Wiring Pi ..."
