@@ -2,6 +2,8 @@
 # hoobs-deconz-phoscon                                                                           #
 # Copyright (C) 2020 HOOBS                                                                       #
 #                                                                                                #
+# MJS: Simple change to generalise for Homebridge                                                #
+#                                                                                                #
 # This program is free software: you can redistribute it and/or modify                           #
 # it under the terms of the GNU General Public License as published by                           #
 # the Free Software Foundation, either version 3 of the License, or                              #
@@ -23,7 +25,7 @@ echo " "
 echo " "
 echo " "
 echo "----------------------------------------------------------------"
-echo "This script will install deCONZ and Phoscon for HOOBS 3"
+echo "This script will install deCONZ and Phoscon"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
@@ -31,7 +33,7 @@ echo " "
 echo "----------------------------------------------------------------"
 echo "After the installation is completed you can access Phoscon:"
 echo "----------------------------------------------------------------"
-echo "Phoscon Interface is reachable at hoobs.local:1881"
+echo "Phoscon Interface is reachable at homebridge.local:1881"
 echo "----------------------------------------------------------------"
 echo " "
 echo " "
@@ -135,7 +137,7 @@ echo "deCONZ updated"
 echo "----------------------------------------------------------------"
 echo "Creating deCONZ service"
 rm -rf /lib/systemd/system/deconz.service
-wget -P /lib/systemd/system https://raw.githubusercontent.com/hoobs-org/hoobs-deconz-phoscon/master/deconz.service
+wget -P /lib/systemd/system https://raw.githubusercontent.com/msivers/hoobs-deconz-phoscon/master/deconz.service
 systemctl enable deconz
 systemctl daemon-reload
 echo "----------------------------------------------------------------"
@@ -144,4 +146,4 @@ echo "----------------------------------------------------------------"
 echo "Starting deCONZ Service"
 systemctl restart deconz
 echo "----------------------------------------------------------------"
-echo "Phoscon Interface is now reachable at hoobs.local:1881"
+echo "Phoscon Interface is now reachable at homebridge.local:1881"
