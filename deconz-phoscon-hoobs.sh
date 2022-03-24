@@ -146,4 +146,4 @@ echo "----------------------------------------------------------------"
 echo "Starting deCONZ Service"
 systemctl restart deconz
 echo "----------------------------------------------------------------"
-echo "Phoscon Interface is now reachable at homebridge.local:1881"
+echo "Phoscon Interface is now reachable at hoobs.local:1881"
